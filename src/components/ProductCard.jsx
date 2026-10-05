@@ -4,6 +4,10 @@ import { useCart } from "../context/CartContext";
 export default function ProductCard({ p }) {
   const { addToCart } = useCart();
 
+  if (!p) {
+    return null;
+  }
+
   return (
     
     
