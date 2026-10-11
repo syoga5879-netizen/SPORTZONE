@@ -51,7 +51,7 @@ export default function Navbar() {
         </NavLink>
 
         <NavLink to="/admin" className={navMenuStyles}>
-          Admin
+          Administrator
         </NavLink>
       </div>
     </nav>
