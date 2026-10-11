@@ -1,4 +1,5 @@
 import { useCart } from "../../context/CartContext";
+import { Link } from "react-router-dom";
 
 export default function Cart() {
   // Mengambil cart, updateQty, removeFromCart dari context useCart
@@ -46,6 +47,25 @@ export default function Cart() {
             </div>
           </div>
         ))}
+      </div>
+
+      <div className="mt-8 border-t pt-4 flex flex-col sm:flex-row justify-between items-center gap-4 bg-white p-4 rounded-lg border shadow-sm">
+        <div>
+          <span className="text-sm text-gray-500">Total Belanja:</span>
+          <span className="text-xl font-black text-black block">
+            Rp{cart.reduce((sum, item) => {
+              const numPrice = typeof item.price === "number" ? item.price : Number(String(item.price).replace(/[^\d]/g, "")) || 0;
+              return sum + numPrice * item.qty;
+            }, 0).toLocaleString("id-ID")}
+          </span>
+        </div>
+
+        <Link
+          to="/checkout"
+          className="px-6 py-3 bg-[#FFE000] text-black font-extrabold uppercase text-sm rounded-lg hover:bg-yellow-400 transition-colors shadow-sm flex items-center gap-2"
+        >
+          Lanjut ke Checkout →
+        </Link>
       </div>
     </div>
   );

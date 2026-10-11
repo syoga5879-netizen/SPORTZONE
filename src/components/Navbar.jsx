@@ -49,6 +49,10 @@ export default function Navbar() {
         <NavLink to="/checkout" className={navMenuStyles}>
           Checkout
         </NavLink>
+
+        <NavLink to="/admin" className={navMenuStyles}>
+          Admin
+        </NavLink>
       </div>
     </nav>
   );
