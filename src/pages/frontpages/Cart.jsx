@@ -1,8 +1,7 @@
 import { useCart } from "../../context/CartContext";
 import { Link } from "react-router-dom";
-
 export default function Cart() {
-  // Mengambil cart, updateQty, removeFromCart dari context useCart
+
   const { cart, updateQty, removeFromCart } = useCart();
 
   if (cart.length === 0) {

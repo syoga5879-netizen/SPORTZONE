@@ -2,11 +2,10 @@ import { useState } from "react";
 import { products as initialProducts } from "../../utils/data";
 
 export default function AdminDashboard() {
-  // State data produk (bisa ditambah/diedit/dihapus secara lokal)
+  
   const [productList, setProductList] = useState(initialProducts);
   const [searchProduct, setSearchProduct] = useState("");
 
-  // Modal Tambah Produk
   const [showAddModal, setShowAddModal] = useState(false);
   const [newProduct, setNewProduct] = useState({
     name: "",
@@ -15,7 +14,6 @@ export default function AdminDashboard() {
     stock: 10,
   });
 
-  // State Pesanan Masuk
   const [orders, setOrders] = useState([
     {
       id: "ORD-SPZ-001",
@@ -43,19 +41,17 @@ export default function AdminDashboard() {
     },
   ]);
 
-  // Filter produk berdasarkan search
   const filteredProducts = productList.filter((item) =>
     item.name.toLowerCase().includes(searchProduct.toLowerCase())
   );
 
-  // Hapus Produk
   const handleDeleteProduct = (id) => {
     if (window.confirm("Apakah Anda yakin ingin menghapus produk ini?")) {
       setProductList((prev) => prev.filter((p) => p.id !== id));
     }
   };
 
-  // Tambah Produk
+
   const handleAddProduct = (e) => {
     e.preventDefault();
     if (!newProduct.name || !newProduct.price) return;
@@ -66,7 +62,7 @@ export default function AdminDashboard() {
       category_name: newProduct.category_name,
       price: newProduct.price,
       stock: Number(newProduct.stock) || 5,
-      img: initialProducts[0]?.img, // Fallback gambar
+      img: initialProducts[0]?.img, 
     };
 
     setProductList([created, ...productList]);
@@ -75,7 +71,6 @@ export default function AdminDashboard() {
     alert("Produk baru berhasil ditambahkan!");
   };
 
-  // Ubah status pesanan
   const handleUpdateOrderStatus = (orderId, newStatus) => {
     setOrders((prev) =>
       prev.map((o) => (o.id === orderId ? { ...o, status: newStatus } : o))
@@ -84,7 +79,7 @@ export default function AdminDashboard() {
 
   return (
     <div className="space-y-6 max-w-7xl mx-auto">
-      {/* Title */}
+
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <h1 className="text-2xl font-black uppercase text-gray-900 tracking-tight">
@@ -183,7 +178,7 @@ export default function AdminDashboard() {
         </div>
       </div>
 
-      {/* Bagian 1: Tabel Pesanan Terbaru */}
+
       <div className="bg-white border rounded-2xl p-6 shadow-xs">
         <h2 className="font-extrabold text-base uppercase text-gray-900 mb-4 flex items-center justify-between">
           <span>Pesanan Terbaru</span>
@@ -242,7 +237,7 @@ export default function AdminDashboard() {
         </div>
       </div>
 
-      {/* Bagian 2: Manajemen Katalog Produk */}
+     
       <div className="bg-white border rounded-2xl p-6 shadow-xs">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
           <div>
@@ -321,7 +316,6 @@ export default function AdminDashboard() {
         </div>
       </div>
 
-      {/* Modal Tambah Produk */}
       {showAddModal && (
         <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-4">
           <div className="bg-white rounded-2xl max-w-md w-full p-6 shadow-xl border">

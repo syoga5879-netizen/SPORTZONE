@@ -7,7 +7,7 @@ export default function AdminLayout() {
 
   return (
     <div className="flex h-screen bg-gray-100 font-sans overflow-hidden">
-      {/* Backdrop Overlay untuk Mobile saat Sidebar terbuka */}
+      
       {sidebarOpen && (
         <div
           onClick={() => setSidebarOpen(false)}
@@ -15,12 +15,11 @@ export default function AdminLayout() {
         ></div>
       )}
 
-      {/* Sidebar Navigasi Admin */}
+
       <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
 
-      {/* Konten Utama */}
       <div className="flex-1 flex flex-col min-w-0 overflow-hidden">
-        {/* Top Header Admin */}
+      
         <header className="bg-white border-b border-gray-200 px-4 sm:px-6 py-3.5 flex justify-between items-center shadow-xs shrink-0">
           <div className="flex items-center gap-3">
             <button
@@ -41,7 +40,7 @@ export default function AdminLayout() {
           </div>
 
           <div className="flex items-center gap-3">
-            {/* Tombol Cepat Kembali ke Toko */}
+       
             <Link
               to="/"
               className="px-3.5 py-1.5 bg-[#FFE000] hover:bg-yellow-400 text-black font-extrabold text-xs uppercase tracking-wider rounded-lg transition-colors flex items-center gap-1.5 shadow-xs"
@@ -50,7 +49,6 @@ export default function AdminLayout() {
               <span className="hidden sm:inline">Lihat Toko</span>
             </Link>
 
-            {/* Profil Admin */}
             <div className="flex items-center gap-2 pl-2 border-l border-gray-200">
               <div className="w-8 h-8 rounded-full bg-black text-[#FFE000] font-black text-xs flex items-center justify-center">
                 AD
@@ -63,12 +61,12 @@ export default function AdminLayout() {
           </div>
         </header>
 
-        {/* Konten Halaman Admin */}
+      
         <main className="flex-1 overflow-y-auto p-4 sm:p-6 bg-gray-50">
           <Outlet />
         </main>
 
-        {/* Footer Admin */}
+     
         <footer className="bg-white border-t border-gray-200 py-3 px-6 text-center text-xs text-gray-500 shrink-0 flex justify-between items-center">
           <span>© 2026 SPORTZONE Admin App</span>
           <span className="text-gray-400">Versi 1.0.0</span>

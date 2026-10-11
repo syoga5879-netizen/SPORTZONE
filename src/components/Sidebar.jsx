@@ -1,7 +1,7 @@
 import { NavLink, Link } from "react-router-dom";
 
 export default function Sidebar({ sidebarOpen, setSidebarOpen }) {
-  // Style untuk link navigasi aktif & non-aktif
+ 
   const navLinkStyle = ({ isActive }) =>
     `flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-bold uppercase transition-all ${
       isActive
@@ -22,7 +22,7 @@ export default function Sidebar({ sidebarOpen, setSidebarOpen }) {
       }`}
     >
       <div>
-        {/* Header Sidebar Brand */}
+     
         <div className="p-5 border-b border-gray-200 flex items-center justify-between">
           <div className="flex items-center gap-2.5">
             <div className="w-8 h-8 rounded-lg bg-[#FFE000] text-black font-black flex items-center justify-center text-sm shadow-xs">
@@ -38,7 +38,6 @@ export default function Sidebar({ sidebarOpen, setSidebarOpen }) {
             </div>
           </div>
 
-          {/* Tombol Tutup Sidebar di Mobile */}
           <button
             onClick={() => setSidebarOpen(false)}
             className="md:hidden text-gray-500 hover:text-black p-1.5 rounded-lg hover:bg-gray-100"
@@ -48,14 +47,14 @@ export default function Sidebar({ sidebarOpen, setSidebarOpen }) {
           </button>
         </div>
 
-        {/* Menu Navigasi Utama */}
+       
         <div className="p-4">
           <span className="text-[10px] uppercase font-black tracking-wider text-gray-400 px-3 block mb-2">
             Menu Utama
           </span>
 
           <nav className="space-y-1.5">
-            {/* Navigasi Dashboard */}
+         
             <NavLink
               to="/admin/dashboard"
               onClick={handleLinkClick}
@@ -67,7 +66,7 @@ export default function Sidebar({ sidebarOpen, setSidebarOpen }) {
               <span>Dashboard</span>
             </NavLink>
 
-            {/* Navigasi About */}
+     
             <NavLink
               to="/admin/about"
               onClick={handleLinkClick}
@@ -82,7 +81,7 @@ export default function Sidebar({ sidebarOpen, setSidebarOpen }) {
         </div>
       </div>
 
-      {/* Bagian Bawah Sidebar */}
+     
       <div className="p-4 border-t border-gray-200 space-y-2">
         <Link
           to="/"

@@ -6,7 +6,6 @@ export default function Checkout() {
   const { cart, clearCart } = useCart();
   const navigate = useNavigate();
 
-  // Data Alamat Sederhana
   const [form, setForm] = useState({
     name: "Gede Yoga Saputra",
     phone: "082236068796",
@@ -16,7 +15,6 @@ export default function Checkout() {
 
   const [isSuccess, setIsSuccess] = useState(false);
 
-  // Hitung total harga
   const subtotal = cart.reduce((sum, item) => {
     const numPrice = typeof item.price === "number" 
       ? item.price 
@@ -62,9 +60,7 @@ export default function Checkout() {
       </h1>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {/* Kolom Form Alamat & Pembayaran */}
         <form onSubmit={handleSubmit} className="md:col-span-2 space-y-5">
-          {/* Alamat Pengiriman */}
           <div className="bg-white border rounded-xl p-5 shadow-sm">
             <h2 className="text-base font-bold text-gray-900 mb-4 border-b pb-2">
               Alamat Pengiriman
@@ -112,7 +108,7 @@ export default function Checkout() {
             </div>
           </div>
 
-          {/* Metode Pembayaran */}
+  
           <div className="bg-white border rounded-xl p-5 shadow-sm">
             <h2 className="text-base font-bold text-gray-900 mb-4 border-b pb-2">
               Metode Pembayaran

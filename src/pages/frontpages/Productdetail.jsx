@@ -27,11 +27,6 @@ export default function ProductDetail() {
   };
 
   return (
-    // <div>
-    //   {/* Menampilkan ID produk */}
-    //   <h1 className="text-2xl font-bold">{p.name}</h1>
-    //   <p className="mt-4">{p.price}</p>
-    // </div>
 
     <div className="p-6">
       <div className="flex gap-6 items-start">

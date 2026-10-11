@@ -1,4 +1,3 @@
-// import { Link } from "react-router-dom";
 import { products } from "../../utils/data";
 import ProductCard from "../../components/ProductCard";
 import Navbar from "../../components/Navbar";

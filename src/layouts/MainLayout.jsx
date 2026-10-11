@@ -2,7 +2,6 @@ import { Outlet, NavLink } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import { useState } from "react";
 import {useNavigate} from "react-router-dom";
-// import Sidebar from "../components/Sidebar";
 
 export default function MainLayout() {
   const [searchQuery, setSearchQuery] = useState("");
